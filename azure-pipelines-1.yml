@@ -5,6 +5,7 @@
 
 trigger:
 - main
+- build
 
 pool: myAgentPool
 
@@ -16,7 +17,7 @@ variables:
   webAppName: 'mywebapp207578'
 
   # Environment name
-  environmentName: 'flask-ml-service'
+  # environmentName: 'flask-ml-service'
 
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
