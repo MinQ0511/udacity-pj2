@@ -10,7 +10,7 @@ pool: myAgentPool
 
 variables:
   # TODO: Replace the service connection name as used in the DevOps project settings
-  azureServiceConnectionId: 'mySC'
+  # azureServiceConnectionId: 'mySC'
   
   # TODO: Specify the value of the existing Web App name
   webAppName: 'mywebapp207578'
@@ -76,7 +76,7 @@ stages:
             - task: AzureWebApp@1
               displayName: 'Deploy Azure Web App'
               inputs:
-                azureSubscription: ${azureServiceConnectionId}
+                azureSubscription: mySC
                 appName: ${webAppName}
                 package: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
                 appType: webApp
