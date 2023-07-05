@@ -74,6 +74,7 @@ stages:
           deploy:
             steps:
             - task: AzureWebApp@1
+              retryCountOnTaskFailure: 10
               displayName: 'Deploy Azure Web App'
               inputs:
                 azureSubscription: mySC
