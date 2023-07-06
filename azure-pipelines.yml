@@ -74,10 +74,10 @@ stages:
           deploy:
             steps:
             - task: AzureWebApp@1
-              retryCountOnTaskFailure: 10
+              retryCountOnTaskFailure: 3
               displayName: 'Deploy Azure Web App'
               inputs:
                 azureSubscription: mySC
-                appName: ${webAppName}
+                appName: myWeebApp0511b
                 package: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
                 appType: webApp
