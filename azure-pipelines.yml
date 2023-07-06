@@ -14,7 +14,7 @@ variables:
   # azureServiceConnectionId: 'mySC'
   
   # TODO: Specify the value of the existing Web App name
-  # webAppName: 'myWeebApp0511b'
+  # webAppName: 'mywebapp0511a.azurewebsites.net'
 
   # Environment name
   environmentName: 'flask-ml-service'
@@ -22,39 +22,35 @@ variables:
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
 
-  # Python version: 3.7
-  pythonVersion: '3.7'
-
 stages:
 - stage: Build
   displayName: Build stage
   jobs:
   - job: BuildJob
     pool: myAgentPool
-    steps:
-    - task: UsePythonVersion@0
-      inputs:
-        versionSpec: '$(pythonVersion)'
-      displayName: 'Use Python $(pythonVersion)'
-    
+    steps:    
     - script: |
-        python -m venv antenv
-        source antenv/bin/activate
-        python -m pip install --upgrade pip
-        pip install setup
-        pip install -r requirements.txt
+        python3 -m pip install --upgrade pip
+        python3 -m pip install setup
+        python3 -m pip install -r requirements.txt
       workingDirectory: $(projectRoot)
+      displayName: 'myStep 1'
 
     - script: |
-        python -m venv antenv
-        source antenv/bin/activate
+        export PATH=$HOME/.local/bin:$PATH
+        make install
+      workingDirectory: $(projectRoot)
+      displayName: 'myStep 2'
+
+    - script: |
+        export PATH=$HOME/.local/bin:$PATH
         make install
         make lint
       workingDirectory: $(projectRoot)
-      displayName: 'Run lint tests'
+      displayName:  'myStep 3 - Run lint tests'
 
     - task: ArchiveFiles@2
-      displayName: 'Archive files'
+      displayName: 'myStep 4 - Archive files'
       inputs:
         rootFolderOrFile: '$(projectRoot)'
         includeRootFolder: false
@@ -63,30 +59,26 @@ stages:
         replaceExistingArchive: true
 
     - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
-      displayName: 'Upload package'
+      displayName: 'myStep 5 - Upload package'
       artifact: drop
-
+  
 - stage: Deploy
   displayName: 'Deploy Web App'
   dependsOn: Build
   condition: succeeded()
   jobs:
-  - deployment: DeploymentJob
-    pool: myAgentPool
-    environment: $(environmentName)
-    strategy:
-      runOnce:
-        deploy:
-          steps:
-          
-          - task: UsePythonVersion@0
-            inputs:
-              versionSpec: '$(pythonVersion)'
-            displayName: 'Use Python version'
-
-          - task: AzureWebApp@1
-            displayName: 'Deploy Azure Web App : flask-ml-service'
-            inputs:
-              azureSubscription: mySC
-              appName: myWeebApp0511b
-              package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
+    - deployment: DeploymentJob
+      pool: myAgentPool
+      environment: ${environmentName}
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+            - task: AzureWebApp@1
+              retryCountOnTaskFailure: 10
+              displayName: 'Deploy Azure Web App'
+              inputs:
+                azureSubscription: mySC
+                appName: myWeebApp0511b
+                package: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+                appType: webApp
