@@ -5,8 +5,6 @@
 
 trigger:
 - main
-- master
-- test
 
 pool: myAgentPool
 
