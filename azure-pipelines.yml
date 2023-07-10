@@ -27,29 +27,18 @@ stages:
   jobs:
   - job: BuildJob
     pool: myAgentPool
-    steps:    
+    steps:  
     - script: |
-        python3 -m pip install --upgrade pip
-        python3 -m pip install setup
-        python3 -m pip install -r requirements.txt
+        python3.9 -m venv antenv
+        source antenv/bin/activate
+        python3.9 -m pip install --upgrade pip
+        pip install setup
+        pip install -r requirements.txt
       workingDirectory: $(projectRoot)
-      displayName: 'myStep 1'
-
-    - script: |
-        export PATH=$HOME/.local/bin:$PATH
-        make install
-      workingDirectory: $(projectRoot)
-      displayName: 'myStep 2'
-
-    - script: |
-        export PATH=$HOME/.local/bin:$PATH
-        make install
-        make lint
-      workingDirectory: $(projectRoot)
-      displayName:  'myStep 3 - Run lint tests'
+      displayName: "Install requirements"
 
     - task: ArchiveFiles@2
-      displayName: 'myStep 4 - Archive files'
+      displayName: 'Archive files'
       inputs:
         rootFolderOrFile: '$(projectRoot)'
         includeRootFolder: false
@@ -58,7 +47,7 @@ stages:
         replaceExistingArchive: true
 
     - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
-      displayName: 'myStep 5 - Upload package'
+      displayName: 'Upload package'
       artifact: drop
 
 - stage: Deploy
