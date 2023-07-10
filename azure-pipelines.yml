@@ -68,5 +68,5 @@ stages:
               inputs:
                 azureSubscription: mySC
                 appName: myweebapp0511c
-                package: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+                package: $(Build.ArtifactStagingDirectory)/drop/$(Build.BuildId).zip
                 appType: webApp
