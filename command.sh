@@ -1,0 +1,1 @@
+az webapp up -n myweebapp0511c
