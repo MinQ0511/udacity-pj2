@@ -30,7 +30,7 @@ Below is the guide with step-by-step instructions on how to run a Python project
 ``` bash
 git@github.com:MinQ0511/udacity-pj2.git
 ```
-![clone the repository pictures](insert link)
+![clone the repository pictures](https://github.com/MinQ0511/udacity-pj2/blob/main/Screenshots/cloned-repo.jpg)
 2. Change the directory to the directory that contains the cloned repository :
 ``` bash
 cd udacity-pj2
@@ -47,7 +47,7 @@ source <your environment name goes here>/bin/activate
 ``` bash
 make all
 ```
-![make all pictures](insert link)
+![make all pictures](https://github.com/MinQ0511/udacity-pj2/blob/main/Screenshots/make-all-cmd.jpg)
 6. Run the application:
 ``` bash
 python -m flask run
@@ -59,7 +59,7 @@ python -m flask run
 ![make prediction](link)
 8. Create CI by GitHub Actions
 - Enable Actions for the repository and set up a workflow.
-![GitHub Actions](link)
+![GitHub Actions]((https://github.com/MinQ0511/udacity-pj2/blob/main/Screenshots/github-action.jpg))
 
 ## Deploy the app to an Azure App Service
 
@@ -98,7 +98,7 @@ App Service in Azure:
 ```
 Note: Make sure edit the make_predict_azure_app.sh file to match the deployed URL
 -X POST https://<yourappname>.azurewebsites.net:$PORT/predict
-![prediction]()
+![prediction](https://github.com/MinQ0511/udacity-pj2/blob/main/Screenshots/run-after-deploy-azure-cd.jpg)
 * Trace streamed log files from the deployed application
 ``` bash
 az webapp log tail -g <your resource group goes here> --name <your webapp goes here>
