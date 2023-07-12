@@ -55,7 +55,7 @@ python -m flask run
 ![make prediction](link)
 8. Create CI by GitHub Actions
 - Enable Actions for the repository and set up a workflow.
-![GitHub Actions]((https://github.com/MinQ0511/udacity-pj2/blob/main/Screenshots/github-action.jpg))
+![GitHub Actions](https://github.com/MinQ0511/udacity-pj2/blob/main/Screenshots/github-action.jpg)
 
 ## Deploy the app to an Azure App Service
 
