@@ -14,15 +14,13 @@ The project focuses on establishing a continuous integration and continuous depl
 ## Project Plan
 A [Trello](https://trello.com/b/n9WapJUQ/udacity-pj2-demo) board for the project has been created to keep track of deadlines for all of the tasks.
 
-A [spreadsheet]() that includes the original and final project plan.
+A [spreadsheet](https://github.com/MinQ0511/udacity-pj2/blob/main/project-management-template.xlsx) that includes the original and final project plan.
 
 ## Instructions
 
 <TODO:  
 * Architectural Diagram (Shows how key parts of the system work)>
-
-<TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
-
+* 
 Below is the guide with step-by-step instructions on how to run a Python project:
 ## Deploy the app in Azure Cloud Shell
 
@@ -80,17 +78,17 @@ az webapp up --name <your webapp goes here> --resource-group <your resource grou
 * 
 Pipeline jobs list:
 
-![pipeline]()
+![pipeline](https://github.com/MinQ0511/udacity-pj2/blob/main/Screenshots/azure-pipeline-success.jpg)
 Pipeline job success details:
 
-![pipeline]()
+![pipeline](https://github.com/MinQ0511/udacity-pj2/blob/main/Screenshots/list-azure-pipelines-jobs.jpg)
 App Service in Azure:
 
-![App Service]()
+![App Service](https://github.com/MinQ0511/udacity-pj2/blob/main/Screenshots/app-details.jpg)
 
 3. Check app is working:
 * Access to the web app's domain via the browser
-![webapp page]()
+![webapp page](https://github.com/MinQ0511/udacity-pj2/blob/main/Screenshots/webapp-run.jpg)
 
 * Run prediction against Azure Application.
 ``` bash
@@ -103,15 +101,15 @@ Note: Make sure edit the make_predict_azure_app.sh file to match the deployed UR
 ``` bash
 az webapp log tail -g <your resource group goes here> --name <your webapp goes here>
 ```
-![webapp log tail]()
+![webapp log tail](https://github.com/MinQ0511/udacity-pj2/blob/main/Screenshots/log-tail.jpg)
 
 * Load test using locust
-![webapp log tail]()
-![webapp log tail]()
+![locust](https://github.com/MinQ0511/udacity-pj2/blob/main/Screenshots/locust.jpg)
+![locust](https://github.com/MinQ0511/udacity-pj2/blob/main/Screenshots/locust-ouput.jpg)
 
 ## Enhancements
 
 <TODO: A short description of how to improve the project in the future>
 
 ## Demo 
-You can watch a short demo of the project on Youtube at [here]()
+You can watch a short demo of the project on Youtube at [here](https://youtu.be/SEG4vM-Dt3w)
