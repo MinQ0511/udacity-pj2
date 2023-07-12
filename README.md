@@ -50,7 +50,7 @@ python -m flask run
 ```
 7. Open Cloud Shell and check that the application is working:
 ``` bash
-./make_predicttion.sh
+./make_prediction.sh
 ```
 ![make prediction](link)
 8. Create CI by GitHub Actions
