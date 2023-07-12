@@ -9,7 +9,7 @@ The project contains a Python application that predicts housing prices in Boston
 3. Deploying a Web App Services manually in Azure
 4. Creating CI/CD pipelines using Azure DevOps
 
-The project focuses on establishing a continuous integration and continuous deployment (CI/CD) pipeline to streamline the development and deployment process for the application.
+The project focuses on establishing a continuous integration and continuous deployment (CI/CD) pipeline to streamline the development and deployment process for the website application.
 
 ## Project Plan
 A [Trello](https://trello.com/b/n9WapJUQ/udacity-pj2-demo) board for the project has been created to keep track of deadlines for all of the tasks.
