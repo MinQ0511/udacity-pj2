@@ -17,10 +17,8 @@ A [Trello](https://trello.com/b/n9WapJUQ/udacity-pj2-demo) board for the project
 A [spreadsheet](https://github.com/MinQ0511/udacity-pj2/blob/main/project-management-template.xlsx) that includes the original and final project plan.
 
 ## Instructions
+![Architectural Diagram](https://github.com/MinQ0511/udacity-pj2/blob/main/Screenshots/sample-architect.png)
 
-<TODO:  
-* Architectural Diagram (Shows how key parts of the system work)>
-* 
 Below is the guide with step-by-step instructions on how to run a Python project:
 ## Deploy the app in Azure Cloud Shell
 
@@ -94,7 +92,7 @@ App Service in Azure:
 ``` bash
 ./make_predict_azure_app.sh 
 ```
-Note: Make sure edit the make_predict_azure_app.sh file to match the deployed URL
+Note: Make sure to edit the make_predict_azure_app.sh file to match the deployed URL
 -X POST https://<yourappname>.azurewebsites.net:$PORT/predict
 ![prediction](https://github.com/MinQ0511/udacity-pj2/blob/main/Screenshots/run-after-deploy-azure-cd.jpg)
 * Trace streamed log files from the deployed application
@@ -109,7 +107,7 @@ az webapp log tail -g <your resource group goes here> --name <your webapp goes h
 
 ## Enhancements
 
-<TODO: A short description of how to improve the project in the future>
+For now, this CI/CD pipeline doesn't have enough automation testing in CD. In the future need to add some regression tests in CD to make sure everything is tested before deployment
 
 ## Demo 
-You can watch a short demo of the project on Youtube at [here](https://youtu.be/SEG4vM-Dt3w)
+You can watch a short demo of the my project on Youtube at [here](https://youtu.be/SEG4vM-Dt3w)
