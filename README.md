@@ -52,7 +52,7 @@ python -m flask run
 ``` bash
 ./make_prediction.sh
 ```
-![make prediction](link)
+![make prediction](https://github.com/MinQ0511/udacity-pj2/blob/main/Screenshots/make_predict_local.jpg)
 8. Create CI by GitHub Actions
 - Enable Actions for the repository and set up a workflow.
 ![GitHub Actions](https://github.com/MinQ0511/udacity-pj2/blob/main/Screenshots/github-action.jpg)
@@ -68,11 +68,11 @@ cd udacity-pj2
 az webapp up --name <your webapp goes here> --resource-group <your resource group goes here> --sku B1 --logs --runtime "PYTHON:3.9"
 ```
 3. Create Azure Pipeline for the app in Azure DevOps. The steps to set up the pipeline following :
-* Access to https://dev.azure.com and sign in.
+* Access to Azure DevOps and sign in.
 * Create a new public project.
 * Select Project Settings and create a new service connection to Azure Resource Manager and an Agent Pool.
 * Next, back to Azure create a VM and config Agent (VM). Then add the self-hosted agent to the agent pool that you created in the step above.
-* Finally, create a new Azure pipeline linked to the GitHub repo and use the existing azure-pipelines.yml. 
+* Finally, create a new CI/CD pipeline that is linked to the GitHub this repository and use the existing azure-pipelines.yml. 
 * 
 Pipeline jobs list:
 
