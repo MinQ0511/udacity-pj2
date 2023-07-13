@@ -1,3 +1,4 @@
+[![Python application test with Github Actions](https://github.com/MinQ0511/udacity-pj2/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/MinQ0511/udacity-pj2/actions/workflows/main.yml)
 # Overview
 
 This project is the second project in the "Cloud DevOps using Microsoft Azure" of Udacity - "Building a CI/CD pipelines"  
